@@ -16,7 +16,7 @@ jobs:
       - name: un-gzip
         run: gzip -d user-agents.json.gz
       - name: filter
-        run: jq '.[].userAgent' user-agents.json -r > user-agent.json
+        run: jq '.[].userAgent' user-agents.json -r > user-agent.txt
       - name: delete
         run: rm user-agents.json
       - name: Add & Commit
