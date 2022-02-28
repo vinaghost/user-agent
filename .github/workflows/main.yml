@@ -1,4 +1,4 @@
-name: Update user-agents.json
+name: Update user-agent.json
 on:
   schedule:
     - cron:  '30 17 * * *'
@@ -16,7 +16,7 @@ jobs:
       - name: un-gzip
         run: gzip -d user-agents.json.gz
       - name: filter
-        run: jq '[.[].userAgent]' user-agents.json -r > user-agent.txt
+        run: jq '[.[].userAgent]' user-agents.json -r > user-agent.json
       - name: delete
         run: rm user-agents.json
       - name: Add & Commit
