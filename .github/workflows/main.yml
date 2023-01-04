@@ -16,9 +16,13 @@ jobs:
       - name: un-gzip
         run: gzip -d user-agents.json.gz
       - name: filter
-        run: jq '[.[].userAgent]' user-agents.json -r > user-agent.json
+        run: jq '[.[].userAgent]' user-agents.json -r > user-agent-duplicate.json
+      - name: remove duplicate
+        run: sort user-agent-duplicate.json | uniq > user-agent.json
       - name: delete
-        run: rm user-agents.json
+        run: |
+          rm user-agents.json
+          rm user-agent-duplicate.json
       - name: Add & Commit
         uses: EndBug/add-and-commit@v8.0.2
         with:
