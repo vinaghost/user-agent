@@ -1,7 +1,7 @@
 name: Update user-agent.json
 on:
   schedule:
-    - cron:  '30 17 * * *'
+    - cron:  '0 0 1 * *'
   workflow_dispatch:
 jobs:
   update:
