@@ -10,7 +10,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2 
       - name: wget
-        run: wget https://github.com/intoli/user-agents/raw/master/src/user-agents.json.gz
+        run: wget https://github.com/intoli/user-agents/raw/main/src/user-agents.json.gz
       - name: install gzip 
         run: sudo apt-get install gzip 
       - name: un-gzip
